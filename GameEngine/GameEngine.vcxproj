@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{CB0187AF-0979-47B7-947A-A3A6FBD6E3FD}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>GameEngine</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(ProjectDir)$(Configuration)\</OutDir>
+    <TargetName>$(ProjectName)_Debug</TargetName>
+    <GenerateManifest>false</GenerateManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>EnableAllWarnings</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_GLFW_WIN32;_GLFW_USE_CONFIG_H;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>
+      </SDLCheck>
+      <AdditionalIncludeDirectories>$(SolutionDir)libs\GLFW\include;$(SolutionDir)libs\SB7\include;$(SolutionDir)libs\MathEngine\include;$(SolutionDir)libs\FileSystem\include;$(SolutionDir)Framework;$(ProjectDir);$(SolutionDir)Resource\;$(SolutionDir)libs\PCSTree\include;$(SolutionDir)libs\Time\include</AdditionalIncludeDirectories>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <StringPooling>false</StringPooling>
+      <MinimalRebuild>false</MinimalRebuild>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <UseUnicodeForAssemblerListing>false</UseUnicodeForAssemblerListing>
+      <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
+      <DisableSpecificWarnings>4514;4668;4710;4711;4201;4588;4587</DisableSpecificWarnings>
+      <ForcedIncludeFiles>MemTracker.h</ForcedIncludeFiles>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;opengl32.lib;glu32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ProgramDatabaseFile>$(OutDir)$(TargetName)Link.pdb</ProgramDatabaseFile>
+      <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Framework\FileIO.cpp" />
+    <ClCompile Include="..\Framework\Timer.cpp" />
+    <ClCompile Include="..\Framework\UnitTest.cpp" />
+    <ClCompile Include="AnimationController.cpp" />
+    <ClCompile Include="AnimClip.cpp" />
+    <ClCompile Include="BoundingSphere.cpp" />
+    <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="CameraManager.cpp" />
+    <ClCompile Include="CameraModel.cpp" />
+    <ClCompile Include="CameraNode.cpp" />
+    <ClCompile Include="eat.cpp" />
+    <ClCompile Include="Engine.cpp" />
+    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="GameObject.cpp" />
+    <ClCompile Include="GameObjectAnim.cpp" />
+    <ClCompile Include="GameObjectMan.cpp" />
+    <ClCompile Include="GameObjectRigid.cpp" />
+    <ClCompile Include="GraphicsObject.cpp" />
+    <ClCompile Include="GraphicsObject_Blinn_Phong.cpp" />
+    <ClCompile Include="GraphicsObject_ColorByPosition.cpp" />
+    <ClCompile Include="GraphicsObject_FlatTexture.cpp" />
+    <ClCompile Include="GraphicsObject_Null.cpp" />
+    <ClCompile Include="GraphicsObject_TextureLight.cpp" />
+    <ClCompile Include="GraphicsObject_Toon.cpp" />
+    <ClCompile Include="GraphicsObject_Wireframe.cpp" />
+    <ClCompile Include="ImportedModel.cpp" />
+    <ClCompile Include="InputMan.cpp" />
+    <ClCompile Include="InputTest.cpp" />
+    <ClCompile Include="Keyboard.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Model.cpp" />
+    <ClCompile Include="Mouse.cpp" />
+    <ClCompile Include="NullModel.cpp" />
+    <ClCompile Include="PhysicsObject.cpp" />
+    <ClCompile Include="PhysicsObjectMan.cpp" />
+    <ClCompile Include="PyramidModel.cpp" />
+    <ClCompile Include="ShaderObject.cpp" />
+    <ClCompile Include="Skeleton.cpp" />
+    <ClCompile Include="TextureManager.cpp" />
+    <ClCompile Include="TextureNode.cpp" />
+    <ClCompile Include="UnitModel.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Framework\FileIO.h" />
+    <ClInclude Include="..\Framework\Framework.h" />
+    <ClInclude Include="..\Framework\MemTracker.h" />
+    <ClInclude Include="..\Framework\MemTrackerMain.h" />
+    <ClInclude Include="..\Framework\Timer.h" />
+    <ClInclude Include="..\Framework\Trace.h" />
+    <ClInclude Include="..\Framework\UnitTest.h" />
+    <ClInclude Include="..\libs\FileSystem\include\File.h" />
+    <ClInclude Include="..\libs\GLFW\include\GLFW\glfw3.h" />
+    <ClInclude Include="..\libs\GLFW\include\GLFW\glfw3native.h" />
+    <ClInclude Include="..\libs\MathEngine\include\Align16.h" />
+    <ClInclude Include="..\libs\MathEngine\include\Constants.h" />
+    <ClInclude Include="..\libs\MathEngine\include\Enum.h" />
+    <ClInclude Include="..\libs\MathEngine\include\MathApp.h" />
+    <ClInclude Include="..\libs\MathEngine\include\MathEngine.h" />
+    <ClInclude Include="..\libs\MathEngine\include\Matrix.h" />
+    <ClInclude Include="..\libs\MathEngine\include\Quat.h" />
+    <ClInclude Include="..\libs\MathEngine\include\QuatApp.h" />
+    <ClInclude Include="..\libs\MathEngine\include\Util.h" />
+    <ClInclude Include="..\libs\MathEngine\include\Vect.h" />
+    <ClInclude Include="..\libs\MathEngine\include\VectApp.h" />
+    <ClInclude Include="..\libs\MathEngine\include\y-.h" />
+    <ClInclude Include="..\libs\PCSTree\include\PCSNode.h" />
+    <ClInclude Include="..\libs\PCSTree\include\PCSTree.h" />
+    <ClInclude Include="..\libs\PCSTree\include\PCSTreeForwardIterator.h" />
+    <ClInclude Include="..\libs\PCSTree\include\PCSTreeIterator.h" />
+    <ClInclude Include="..\libs\PCSTree\include\PCSTreeReverseIterator.h" />
+    <ClInclude Include="..\libs\SB7\include\GL\gl3w.h" />
+    <ClInclude Include="..\libs\SB7\include\GL\glcorearb.h" />
+    <ClInclude Include="..\libs\SB7\include\GL\glext.h" />
+    <ClInclude Include="..\libs\SB7\include\GL\glxext.h" />
+    <ClInclude Include="..\libs\SB7\include\GL\wglext.h" />
+    <ClInclude Include="..\libs\SB7\include\object.h" />
+    <ClInclude Include="..\libs\SB7\include\sb6mfile.h" />
+    <ClInclude Include="..\libs\SB7\include\sb7.h" />
+    <ClInclude Include="..\libs\SB7\include\sb7color.h" />
+    <ClInclude Include="..\libs\SB7\include\sb7ext.h" />
+    <ClInclude Include="..\libs\SB7\include\sb7ktx.h" />
+    <ClInclude Include="..\libs\SB7\include\sb7textoverlay.h" />
+    <ClInclude Include="..\libs\SB7\include\shader.h" />
+    <ClInclude Include="..\libs\SB7\include\vmath.h" />
+    <ClInclude Include="..\libs\Time\include\Time.h" />
+    <ClInclude Include="..\libs\Time\include\Timer.h" />
+    <ClInclude Include="AnimationController.h" />
+    <ClInclude Include="AnimationHeader.h" />
+    <ClInclude Include="AnimClip.h" />
+    <ClInclude Include="BoundingSphere.h" />
+    <ClInclude Include="Camera.h" />
+    <ClInclude Include="CameraManager.h" />
+    <ClInclude Include="CameraModel.h" />
+    <ClInclude Include="CameraNode.h" />
+    <ClInclude Include="ChunkHeader.h" />
+    <ClInclude Include="Colors.h" />
+    <ClInclude Include="Config.h" />
+    <ClInclude Include="eat.h" />
+    <ClInclude Include="Engine.h" />
+    <ClInclude Include="FrameData.h" />
+    <ClInclude Include="Game.h" />
+    <ClInclude Include="GameObject.h" />
+    <ClInclude Include="GameObjectAnim.h" />
+    <ClInclude Include="GameObjectMan.h" />
+    <ClInclude Include="GameObjectRigid.h" />
+    <ClInclude Include="GraphicsObject.h" />
+    <ClInclude Include="GraphicsObjects.h" />
+    <ClInclude Include="GraphicsObject_Blinn_Phong.h" />
+    <ClInclude Include="GraphicsObject_ColorByPosition.h" />
+    <ClInclude Include="GraphicsObject_Null.h" />
+    <ClInclude Include="GraphicsObject_TextureLight.h" />
+    <ClInclude Include="GraphicsObject_Toon.h" />
+    <ClInclude Include="GraphicsObject_Wireframe.h" />
+    <ClInclude Include="GraphicsObject_FlatTexture.h" />
+    <ClInclude Include="ImportedModel.h" />
+    <ClInclude Include="InputMan.h" />
+    <ClInclude Include="InputTest.h" />
+    <ClInclude Include="Keyboard.h" />
+    <ClInclude Include="Model.h" />
+    <ClInclude Include="ModelFileHeader.h" />
+    <ClInclude Include="Mouse.h" />
+    <ClInclude Include="NullModel.h" />
+    <ClInclude Include="PhysicsObject.h" />
+    <ClInclude Include="PhysicsObjectMan.h" />
+    <ClInclude Include="PyramidModel.h" />
+    <ClInclude Include="Scenes.h" />
+    <ClInclude Include="ShaderObject.h" />
+    <ClInclude Include="Skeleton.h" />
+    <ClInclude Include="SkeletonHeader.h" />
+    <ClInclude Include="TextureManager.h" />
+    <ClInclude Include="TextureNode.h" />
+    <ClInclude Include="TextureNodeLink.h" />
+    <ClInclude Include="TGA.h" />
+    <ClInclude Include="UnitModel.h" />
+    <ClInclude Include="UnitModelFileHeader.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="..\libs\FileSystem\lib\_FileSystem.lib" />
+    <Library Include="..\libs\GLFW\lib\GLFWDebug.lib" />
+    <Library Include="..\libs\GLFW\lib\GLFWRelease.lib" />
+    <Library Include="..\libs\MathEngine\lib\_MathEngineDebug.lib" />
+    <Library Include="..\libs\PCSTree\lib\PCSTreeDebug.lib" />
+    <Library Include="..\libs\PCSTree\lib\PCSTreeRelease.lib">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </Library>
+    <Library Include="..\libs\SB7\lib\SB7Debug.lib" />
+    <Library Include="..\libs\SB7\lib\SB7Release.lib" />
+    <Library Include="..\libs\Time\lib\TimeDebug.lib" />
+    <Library Include="..\libs\Time\lib\TimeRelease.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\libs\FileSystem\lib\_FileSystem.pdb" />
+    <None Include="..\libs\GLFW\lib\GLFWDebug.pdb" />
+    <None Include="..\libs\GLFW\lib\GLFWRelease.pdb" />
+    <None Include="..\libs\MathEngine\lib\_MathEngineDebug.pdb" />
+    <None Include="..\libs\PCSTree\lib\PCSTreeDebug.pdb" />
+    <None Include="..\libs\PCSTree\lib\PCSTreeRelease.pdb">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="..\libs\SB7\lib\SB7Debug.pdb" />
+    <None Include="..\libs\SB7\lib\SB7Release.pdb" />
+    <None Include="..\libs\Time\lib\TimeDebug.pdb" />
+    <None Include="..\libs\Time\lib\TimeRelease.pdb" />
+    <None Include="blinnphong.fs.glsl" />
+    <None Include="blinnphong.vs.glsl" />
+    <None Include="colorRender.fs.glsl" />
+    <None Include="colorRender.vs.glsl" />
+    <None Include="nullRender.fs.glsl" />
+    <None Include="nullRender.vs.glsl" />
+    <None Include="render.fs.glsl" />
+    <None Include="render.vs.glsl" />
+    <None Include="texturePointLightDiff.fs.glsl" />
+    <None Include="texturePointLightDiff.vs.glsl" />
+    <None Include="textureRender.fs.glsl" />
+    <None Include="textureRender.vs.glsl" />
+    <None Include="toonshading.fs.glsl" />
+    <None Include="toonshading.vs.glsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\Resource\dogHair.tga" />
+    <Image Include="..\Resource\earth.tga" />
+    <Image Include="..\Resource\grass.tga" />
+    <Image Include="..\Resource\metalCrate.tga" />
+    <Image Include="..\Resource\stones.tga" />
+    <Image Include="..\Resource\waves.tga" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

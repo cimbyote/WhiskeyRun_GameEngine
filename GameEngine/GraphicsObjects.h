@@ -1,0 +1,7 @@
+#include "GraphicsObject.h"
+#include "GraphicsObject_ColorByPosition.h"
+#include "GraphicsObject_Wireframe.h"
+#include "GraphicsObject_FlatTexture.h"
+#include "GraphicsObject_TextureLight.h"
+#include "GraphicsObject_Blinn_Phong.h"
+#include "GraphicsObject_Toon.h"
